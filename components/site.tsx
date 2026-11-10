@@ -1,7 +1,121 @@
-'use client';
-import Link from 'next/link';import {usePathname} from 'next/navigation';import {useState} from 'react';import {ArrowUpRight,ArrowRight,Menu,X,Github,Mail} from 'lucide-react';
-const links=[{href:'#solutions',label:'Services'},{href:'#selected-work',label:'Work'},{href:'#about',label:'About'},{href:'#credentials',label:'Credentials'},{href:'#contact',label:'Contact'}];
-export function Header(){const [open,setOpen]=useState(false);const path=usePathname();return <header className="site-header"><div className="nav-shell"><Link href="/" className="brand" onClick={()=>setOpen(false)}>MIKAILA<span> BROWN</span><b className="brand-dot">.</b></Link><nav className={'nav-links '+(open?'open':'')} aria-label="Main navigation">{links.map(l=><Link key={l.href} className={path===l.href?'active':''} href={l.href} onClick={()=>setOpen(false)}>{l.label}</Link>)}</nav><Link href="#contact" className="nav-cta">Discuss a project <ArrowUpRight size={16}/></Link><button className="menu-toggle" onClick={()=>setOpen(!open)} aria-label={open?'Close menu':'Open menu'} aria-expanded={open}>{open?<X/>:<Menu/>}</button></div></header>}
-export function Footer(){return <footer className="footer"><div className="container"><div className="footer-main"><div><div className="eyebrow light">READY TO WORK SMARTER?</div><h2>Better systems.<br/><em>Better business.</em></h2><Link className="button button-lime" href="#contact">Discuss your project <ArrowUpRight size={18}/></Link></div><div className="footer-side"><p>Practical AI, automation, custom software, and secure technology — built with business outcomes in mind.</p><div className="footer-social"><a href="https://github.com/MikailaBrownTech" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={20}/></a><Link href="#contact" aria-label="Contact"><Mail size={20}/></Link></div></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Mikaila Brown</span><span>Independent specialist. Business-minded solutions.</span><Link href="#top">Back to top ↑</Link></div></div></footer>}
-export function ArrowLink({href,children}:{href:string,children:React.ReactNode}){return <Link href={href} className="inline-link">{children}<ArrowUpRight size={17}/></Link>}
-export function CTA({label='Discuss your project'}:{label?:string}){return <Link href="#contact" className="btn btn-dark">{label}<ArrowRight size={18}/></Link>}
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { ArrowUpRight, ArrowRight, Menu, X, Github, Mail } from "lucide-react";
+const links = [
+  { href: "#solutions", label: "Services" },
+  { href: "#selected-work", label: "Work" },
+  { href: "#about", label: "About" },
+  { href: "#credentials", label: "Credentials" },
+  { href: "#contact", label: "Contact" },
+];
+export function Header() {
+  const [open, setOpen] = useState(false);
+  const path = usePathname();
+  return (
+    <header className="site-header">
+      <div className="nav-shell">
+        <Link href="/" className="brand" onClick={() => setOpen(false)}>
+        <Image src="/logo.png"
+        width={500}
+        height={500}
+        alt="Logo" />
+        </Link>
+        <nav
+          className={"nav-links " + (open ? "open" : "")}
+          aria-label="Main navigation"
+        >
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              className={path === l.href ? "active" : ""}
+              href={l.href}
+              onClick={() => setOpen(false)}
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+        <Link href="#contact" className="nav-cta">
+          Discuss a project <ArrowUpRight size={16} />
+        </Link>
+        <button
+          className="menu-toggle"
+          onClick={() => setOpen(!open)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+      </div>
+    </header>
+  );
+}
+export function Footer() {
+  return (
+    <footer className="footer">
+      <div className="container">
+        <div className="footer-main">
+          <div>
+            <div className="eyebrow light">READY TO WORK SMARTER?</div>
+            <h2>
+              Better systems.
+              <br />
+              <em>Better business.</em>
+            </h2>
+            <Link className="button button-lime" href="#contact">
+              Discuss your project <ArrowUpRight size={18} />
+            </Link>
+          </div>
+          <div className="footer-side">
+            <p>
+              Practical AI, automation, custom software, and secure technology —
+              built with business outcomes in mind.
+            </p>
+            <div className="footer-social">
+              <a
+                href="https://github.com/MikailaBrownTech"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
+                <Github size={20} />
+              </a>
+              <Link href="#contact" aria-label="Contact">
+                <Mail size={20} />
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} Mikaila Brown</span>
+          <span>Independent specialist. Business-minded solutions.</span>
+          <Link href="#top">Back to top ↑</Link>
+        </div>
+      </div>
+    </footer>
+  );
+}
+export function ArrowLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link href={href} className="inline-link">
+      {children}
+      <ArrowUpRight size={17} />
+    </Link>
+  );
+}
+export function CTA({ label = "Discuss your project" }: { label?: string }) {
+  return (
+    <Link href="#contact" className="btn btn-dark">
+      {label}
+      <ArrowRight size={18} />
+    </Link>
+  );
+}
