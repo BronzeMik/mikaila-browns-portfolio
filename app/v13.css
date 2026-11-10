@@ -1,0 +1,18 @@
+
+/* V13: single-page contact and section navigation */
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+section[id]{scroll-margin-top:90px}
+.v13-contact{position:relative;padding:clamp(80px,11vw,170px) 0;background:radial-gradient(ellipse at 90% 5%,#8c24b855,transparent 45%),#13071f;color:#fff;overflow:hidden}
+.v13-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,7vw,110px);align-items:center}
+.v13-contact-copy h2{font-size:clamp(3rem,6vw,6.4rem);line-height:.98;letter-spacing:-.065em;margin:25px 0 28px}
+.v13-contact-copy h2 em{color:#ee83e9;font-style:italic}
+.v13-contact-copy>p{font-size:1.14rem;line-height:1.7;max-width:470px;color:#d8c9e7}
+.v13-contact-note{margin-top:44px;font-size:.72rem;letter-spacing:.14em;color:#d4fa6a}
+.v13-contact-form{padding:clamp(22px,3vw,45px);border:1px solid #a65bd866;border-radius:26px;background:linear-gradient(145deg,#31134c,#190b2e);box-shadow:0 35px 100px #0005}
+.v13-contact-form .contact-form{display:grid;gap:16px}
+.v13-contact-form .contact-form label{color:#fff}
+.v13-contact-form .contact-form input,.v13-contact-form .contact-form select,.v13-contact-form .contact-form textarea{background:#fff;color:#180a28;border:1px solid #c3a9d7}
+.v13-contact-form .contact-form button{background:#d8fb79;color:#170a28}
+.v13-contact-form .form-note{color:#d5c5e2}
+@media(max-width:800px){.v13-contact-grid{grid-template-columns:1fr}.v13-contact-copy h2{font-size:clamp(3.2rem,11vw,5rem)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
