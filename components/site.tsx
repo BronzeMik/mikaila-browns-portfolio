@@ -2,7 +2,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ArrowUpRight, ArrowRight, Menu, X, Github, Mail } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Menu, X, Github, Mail } from "lucide-react"
+import Image from "next/image"
+
 const links = [
   { href: "#solutions", label: "Services" },
   { href: "#selected-work", label: "Work" },
