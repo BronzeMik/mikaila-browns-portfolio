@@ -13,6 +13,8 @@ export type Project = {
   hrefLabel: string;
   /** Public source repository, when one exists. */
   repo?: string;
+  /** Live app sits behind a password to prevent AI/API abuse; visitors request access instead. */
+  protected?: boolean;
 };
 
 export const projects: readonly Project[] = [
@@ -22,7 +24,7 @@ export const projects: readonly Project[] = [
     problem: 'Reviewing resumes means sorting through large amounts of unstructured information.',
     solution: 'A focused tool that organizes resume insights into a more usable, consistent review experience.',
     tags: ['AI-assisted analysis', 'Information organization', 'Hiring workflows'],
-    status: 'Live project', href: 'https://resume-analyzer-ai.netlify.app/', hrefLabel: 'Open the project',
+    status: 'Live project', href: 'https://resume-analyzer-ai.netlify.app/', hrefLabel: 'Open the project', protected: true,
     repo: 'https://github.com/BronzeMik/ai-resume-analyzer'
   },
   {
@@ -41,7 +43,7 @@ export const projects: readonly Project[] = [
     problem: 'Sharing progress consistently takes time away from building.',
     solution: 'A workspace that turns software project activity into a repeatable publishing workflow.',
     tags: ['Content workflow', 'Product design', 'GitHub integration'],
-    status: 'In development', href: 'https://shipnote-app-bcy7.vercel.app/', hrefLabel: 'Open the project',
+    status: 'In development', href: 'https://shipnote-app-bcy7.vercel.app/', hrefLabel: 'Open the project', protected: true,
     repo: 'https://github.com/MikailaBrownTech/shipnote-app'
   },
   {
@@ -50,7 +52,7 @@ export const projects: readonly Project[] = [
     problem: 'Useful repair guidance is scattered across manuals and websites.',
     solution: 'A search-focused experience that brings relevant repair resources into one place.',
     tags: ['AI-assisted search', 'Knowledge discovery', 'Repair workflows'],
-    status: 'Project showcase', href: 'https://incident-report-app-lime.vercel.app/', hrefLabel: 'Open the project'
+    status: 'Project showcase', href: 'https://incident-report-app-lime.vercel.app/', hrefLabel: 'Open the project', protected: true
   },
   {
     slug: 'leads', index: '05', name: 'Automated Lead Finder, Scoring and Outreach Generator', subtitle: 'Better research. More relevant outreach.',
@@ -58,7 +60,7 @@ export const projects: readonly Project[] = [
     problem: 'Prospect research and first-draft outreach are slow and inconsistent.',
     solution: 'A structured workflow that collects company information, assesses fit, and prepares outreach drafts for human review.',
     tags: ['Lead research', 'Prospect scoring', 'Human-reviewed outreach'],
-    status: 'Portfolio project', href: 'https://propossal-generator.vercel.app/login', hrefLabel: 'Open the project',
+    status: 'Portfolio project', href: 'https://propossal-generator.vercel.app/login', hrefLabel: 'Open the project', protected: true,
     repo: 'https://github.com/MikailaBrownTech/Auto-Lead-Score-and-Email-Generator'
   }
 ];

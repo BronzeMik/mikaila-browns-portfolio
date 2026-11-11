@@ -1,7 +1,7 @@
 'use client';
 import {useRef} from 'react';
 import {motion, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform} from 'motion/react';
-import {ArrowUpRight, Check, Github, Search} from 'lucide-react';
+import {ArrowUpRight, Check, Github, Lock, Search} from 'lucide-react';
 import {projects, type Project} from '@/lib/data';
 import {Reveal, SplitHeading} from './ui';
 
@@ -106,9 +106,17 @@ function ProjectRow({p, i}: {p: Project; i: number}) {
           </dl>
           <ul className="tags" aria-label="Focus areas">{p.tags.map((t) => <li key={t}>{t}</li>)}</ul>
           <div className="project-links">
-            <a className="btn btn-primary btn-sm" href={p.href} target="_blank" rel="noopener noreferrer">{p.hrefLabel} <ArrowUpRight size={16} /><span className="sr-only"> (opens in a new tab)</span></a>
+            {p.protected ? (
+              <>
+                <a className="btn btn-primary btn-sm" href="#contact"><Lock size={15} /> Request demo access</a>
+                <a className="btn btn-ghost btn-sm" href={p.href} target="_blank" rel="noopener noreferrer">Have a password? Open app <ArrowUpRight size={16} /><span className="sr-only"> (opens in a new tab)</span></a>
+              </>
+            ) : (
+              <a className="btn btn-primary btn-sm" href={p.href} target="_blank" rel="noopener noreferrer">{p.hrefLabel} <ArrowUpRight size={16} /><span className="sr-only"> (opens in a new tab)</span></a>
+            )}
             {p.repo && <a className="btn btn-ghost btn-sm" href={p.repo} target="_blank" rel="noopener noreferrer"><Github size={16} /> Source code<span className="sr-only"> (opens in a new tab)</span></a>}
           </div>
+          {p.protected && <p className="protected-note"><Lock size={13} /> This app is password-protected to prevent AI/API abuse. Ask and I’ll share a demo login.</p>}
         </Reveal>
       </motion.div>
     </article>

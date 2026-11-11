@@ -218,3 +218,6 @@
   .ticker-track{animation:none}
   .bar em{width:var(--w)}
 }
+
+.protected-note{display:flex;gap:8px;align-items:flex-start;margin-top:16px;font-size:.82rem;color:#a99bc9}.protected-note svg{flex:none;margin-top:4px;color:var(--cyan)}
+.project.layout-3 .protected-note{text-align:left}
