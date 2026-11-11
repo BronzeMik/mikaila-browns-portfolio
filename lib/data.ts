@@ -1,13 +1,80 @@
-export const projects = [
- {slug:'resume-analyzer',index:'01',name:'AI Resume Analyzer',category:'AI & WORKFLOW DESIGN',headline:'A clearer way to review resumes.',description:'An AI-assisted resume analysis experience designed to make candidate information easier to review and compare.',problem:'Reviewing resumes can mean sorting through large amounts of unstructured information.',solution:'A focused tool that organizes resume insights into a more usable review experience.',value:'Less information overload. A more consistent starting point for candidate review.',tags:['AI-assisted analysis','Information organization','Hiring workflows'],visual:'resume',github:'https://resume-analyzer-ai.netlify.app/'},
- {slug:'employee-onboarding',index:'02',name:'Microsoft Employee Onboarding',category:'BUSINESS AUTOMATION',headline:'Make day one feel effortless.',description:'An employee onboarding automation concept for Microsoft-based workplaces, designed to simplify repetitive setup tasks.',problem:'Employee setup often requires repeating the same administrative steps across multiple systems.',solution:'A standardized workflow to coordinate onboarding activities in a Microsoft environment.',value:'A more consistent employee experience and fewer repetitive setup steps.',tags:['Microsoft ecosystem','Process automation','Employee experience'],visual:'onboarding',status:'Project showcase',github:'https://zapier.com/templates/details/it-onboarding-automation-7dc1c7?secret=MTp0ZW1wbGF0ZTpGQU5LdFpoYTlybm9TeDFwRFI3UzZGRFNPdWVKVGRUTFFRNDVRaHFxeXZJOjZsZTI3Yg'},
- {slug:'shipnote',index:'03',name:'ShipNote',category:'PRODUCT & CONTENT WORKFLOWS',headline:'Make your work worth sharing.',description:'A product in development that helps turn software project activity into a more manageable content workflow.',problem:'Sharing progress consistently takes time away from building.',solution:'A dedicated workspace for organizing projects and preparing a repeatable publishing workflow.',value:'A simpler path from work completed to stories worth sharing.',tags:['Content workflow','Product design','GitHub integration'],github:'https://shipnote-app-bcy7.vercel.app/',visual:'shipnote',status:'In development'},
- {slug:'fixit-ai',index:'04',name:'FixIt AI',category:'AI & KNOWLEDGE ACCESS',headline:'Find the right fix, faster.',description:'An AI-assisted concept for locating repair manuals, technical articles, and troubleshooting resources.',problem:'Useful repair guidance is often scattered across manuals and websites.',solution:'A search-focused experience that brings relevant repair resources into one place.',value:'Less time hunting for information and more time working on the repair.',tags:['AI-assisted search','Knowledge discovery','Repair workflows'],visual:'fixit',status:'Project showcase',github:'https://incident-report-app-lime.vercel.app/'},
- {slug:'lead-finder',index:'05',name:'Lead Finder & Outreach Generator',category:'SALES AUTOMATION',headline:'Better research. More relevant outreach.',description:'A prospect research and lead scoring application that helps prepare evidence-based outreach drafts for human review.',problem:'Prospect research and first-draft outreach can be slow and inconsistent.',solution:'A structured workflow to collect company information, assess fit, and prepare outreach suggestions.',value:'More organized prospecting and more time for meaningful conversations.',tags:['Lead research','Prospect scoring','Human-reviewed outreach'],github:'https://propossal-generator.vercel.app/login',visual:'leads',status:'Portfolio project'}
-] as const;
-export const services = [
- {number:'01',title:'Business automation',description:'Give your team time back by reducing repetitive tasks, connecting tools, and creating smoother workflows.',icon:'workflow',items:['Workflow design','Microsoft-based automation','System integrations']},
- {number:'02',title:'AI-powered solutions',description:'Make information easier to find, understand, and act on with thoughtfully designed AI-assisted tools.',icon:'sparkles',items:['AI-assisted applications','Knowledge search','Document intelligence']},
- {number:'03',title:'Custom software',description:'Replace clunky workarounds with practical software that fits the way your business actually operates.',icon:'code',items:['Web applications','Internal tools','Product development']},
- {number:'04',title:'Cloud & security',description:'Build a stronger technical foundation with secure, reliable systems that are easier to manage and grow.',icon:'shield',items:['Cloud infrastructure','Security-minded design','System reliability']}
+export type Project = {
+  slug: 'resume' | 'onboarding' | 'shipnote' | 'fixit' | 'leads';
+  index: string;
+  name: string;
+  subtitle: string;
+  category: string;
+  problem: string;
+  solution: string;
+  tags: readonly string[];
+  status: string;
+  /** Existing working live/demo link (preserved from the original site). */
+  href: string;
+  hrefLabel: string;
+  /** Public source repository, when one exists. */
+  repo?: string;
+};
+
+export const projects: readonly Project[] = [
+  {
+    slug: 'resume', index: '01', name: 'AI Resume Analyzer', subtitle: 'A clearer way to review resumes.',
+    category: 'AI & WORKFLOW DESIGN',
+    problem: 'Reviewing resumes means sorting through large amounts of unstructured information.',
+    solution: 'A focused tool that organizes resume insights into a more usable, consistent review experience.',
+    tags: ['AI-assisted analysis', 'Information organization', 'Hiring workflows'],
+    status: 'Live project', href: 'https://resume-analyzer-ai.netlify.app/', hrefLabel: 'Open the project',
+    repo: 'https://github.com/BronzeMik/ai-resume-analyzer'
+  },
+  {
+    slug: 'onboarding', index: '02', name: 'Microsoft 365 Employee Onboarding Automation', subtitle: 'Make day one feel effortless.',
+    category: 'BUSINESS AUTOMATION',
+    problem: 'Employee setup means repeating the same administrative steps across several systems.',
+    solution: 'A standardized workflow that coordinates onboarding activities in a Microsoft environment.',
+    tags: ['Microsoft ecosystem', 'Process automation', 'Employee experience'],
+    status: 'Project showcase',
+    href: 'https://zapier.com/templates/details/it-onboarding-automation-7dc1c7?secret=MTp0ZW1wbGF0ZTpGQU5LdFpoYTlybm9TeDFwRFI3UzZGRFNPdWVKVGRUTFFRNDVRaHFxeXZJOjZsZTI3Yg',
+    hrefLabel: 'View the workflow'
+  },
+  {
+    slug: 'shipnote', index: '03', name: 'ShipNote — Social Media Automation', subtitle: 'Make your work worth sharing.',
+    category: 'PRODUCT & CONTENT WORKFLOWS',
+    problem: 'Sharing progress consistently takes time away from building.',
+    solution: 'A workspace that turns software project activity into a repeatable publishing workflow.',
+    tags: ['Content workflow', 'Product design', 'GitHub integration'],
+    status: 'In development', href: 'https://shipnote-app-bcy7.vercel.app/', hrefLabel: 'Open the project',
+    repo: 'https://github.com/MikailaBrownTech/shipnote-app'
+  },
+  {
+    slug: 'fixit', index: '04', name: 'FixIt AI — Repair Manual and Article Finder', subtitle: 'Find the right fix, faster.',
+    category: 'AI & KNOWLEDGE ACCESS',
+    problem: 'Useful repair guidance is scattered across manuals and websites.',
+    solution: 'A search-focused experience that brings relevant repair resources into one place.',
+    tags: ['AI-assisted search', 'Knowledge discovery', 'Repair workflows'],
+    status: 'Project showcase', href: 'https://incident-report-app-lime.vercel.app/', hrefLabel: 'Open the project'
+  },
+  {
+    slug: 'leads', index: '05', name: 'Automated Lead Finder, Scoring and Outreach Generator', subtitle: 'Better research. More relevant outreach.',
+    category: 'SALES AUTOMATION',
+    problem: 'Prospect research and first-draft outreach are slow and inconsistent.',
+    solution: 'A structured workflow that collects company information, assesses fit, and prepares outreach drafts for human review.',
+    tags: ['Lead research', 'Prospect scoring', 'Human-reviewed outreach'],
+    status: 'Portfolio project', href: 'https://propossal-generator.vercel.app/login', hrefLabel: 'Open the project',
+    repo: 'https://github.com/MikailaBrownTech/Auto-Lead-Score-and-Email-Generator'
+  }
+];
+
+export const certifications = [
+  { group: 'CompTIA', items: [
+    { name: 'CompTIA A+', desc: 'IT support & troubleshooting', icon: 'wrench' },
+    { name: 'CompTIA Network+', desc: 'Networking & infrastructure', icon: 'network' },
+    { name: 'CompTIA Security+', desc: 'Cybersecurity fundamentals', icon: 'lock' },
+    { name: 'CompTIA Project+', desc: 'IT project management', icon: 'clipboard' },
+    { name: 'CompTIA Linux+', desc: 'Linux systems administration', icon: 'terminal' }
+  ]},
+  { group: 'Amazon Web Services', items: [
+    { name: 'AWS Certified Cloud Practitioner', desc: 'AWS cloud fundamentals', icon: 'cloud' }
+  ]},
+  { group: 'ITIL', items: [
+    { name: 'ITIL 4 Foundation', desc: 'IT service management', icon: 'cap' }
+  ]}
 ] as const;

@@ -16,3 +16,20 @@ section[id]{scroll-margin-top:90px}
 .v13-contact-form .form-note{color:#d5c5e2}
 @media(max-width:800px){.v13-contact-grid{grid-template-columns:1fr}.v13-contact-copy h2{font-size:clamp(3.2rem,11vw,5rem)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.book-consultation{margin-top:22px;display:grid;gap:8px;justify-items:start}.book-consultation .form-note{margin:0}
+
+/* Services accordion */
+.v10-service-item{border-top:1px solid #cbbbd9;color:#281039}
+.v10-service-item:last-child{border-bottom:1px solid #cbbbd9}
+.v10-service-item>summary.v10-service{border-top:0;cursor:pointer;list-style:none}
+.v10-service-item>summary::-webkit-details-marker{display:none}
+.v10-service-item>summary.v10-service:last-child{border-bottom:0}
+.v10-service-item[open]>summary.v10-service{background:#29104d;color:#fff;padding-inline:30px}
+.v10-service-item[open] .v10-service-arrow{transform:rotate(45deg);background:var(--lime);color:#210b3b}
+.v10-service-item>summary:focus-visible{outline:3px solid var(--lime);outline-offset:-3px}
+.v10-service-panel{display:grid;grid-template-columns:10% 1fr 1fr;gap:20px 40px;padding:30px 30px 40px;background:#fff7;align-items:start}
+.v10-service-panel>div:first-child{grid-column:2}
+.v10-service-panel p{margin:8px 0 0;font-size:16px;line-height:1.6;max-width:520px}
+.v10-service-panel-label{font-size:12px;font-weight:900;letter-spacing:.12em;color:#6b3fa0}
+.v10-service-panel .v10-text-link{grid-column:2/4}
+@media(max-width:800px){.v10-service-panel{grid-template-columns:1fr;padding:22px 0 30px}.v10-service-panel>div:first-child,.v10-service-panel .v10-text-link{grid-column:auto}.v10-service-item[open]>summary.v10-service{padding-inline:12px}}
