@@ -2,8 +2,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ArrowUpRight, ArrowRight, Menu, X, Github, Mail } from "lucide-react"
-import Image from "next/image"
+import { ArrowUpRight, ArrowRight, Menu, X, Github, Mail } from "lucide-react";
+import Image from "next/image";
+import logo from "../public/images/logo.png";
 
 const links = [
   { href: "#solutions", label: "Services" },
@@ -19,10 +20,14 @@ export function Header() {
     <header className="site-header">
       <div className="nav-shell">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
-        <Image src="/logo.png"
-        width={500}
-        height={500}
-        alt="Logo" />
+          <Image
+            src={logo}
+            alt="Mikaila Brown"
+            width={180}
+            height={58}
+            className="h-20 w-auto object-contain"
+            priority
+          />
         </Link>
         <nav
           className={"nav-links " + (open ? "open" : "")}
