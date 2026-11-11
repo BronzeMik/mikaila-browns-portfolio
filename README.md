@@ -9,15 +9,15 @@ npm install
 npm run dev
 ```
 
-## Web3Forms
+## Contact form (SplitForms)
 
-Create `.env.local` in the project root:
+Create a form at splitforms.com and copy its access key into `.env.local`:
 
 ```env
-WEB3FORMS_ACCESS_KEY=your_real_key
+SPLITFORMS_ACCESS_KEY=your_access_key
 ```
 
-The contact form posts to `/api/contact` server-side. Add the same variable to your deployment environment. Verify delivery using your own key before publishing.
+The contact form posts to `/api/contact`, which forwards to SplitForms server-side so the key stays off the client. Add the same variable to your deployment environment (e.g. Netlify) and redeploy. Verify delivery with a test submission before publishing.
 
 ## Notes
 
