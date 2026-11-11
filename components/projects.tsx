@@ -71,7 +71,6 @@ function ProjectRow({p, i}: {p: Project; i: number}) {
   const rotY = useTransform(smx, [-0.5, 0.5], [-10, 10]);
   const rotX = useTransform(smy, [-0.5, 0.5], [8, -8]);
   const {scrollYProgress} = useScroll({target: ref, offset: ['start end', 'end start']});
-  const drift = useTransform(scrollYProgress, [0, 1], [50, -50]);
   const driftSlow = useTransform(scrollYProgress, [0, 1], [20, -20]);
 
   return (
@@ -95,7 +94,7 @@ function ProjectRow({p, i}: {p: Project; i: number}) {
         </motion.div>
         <p className="concept-note">Concept visualization — not a screenshot</p>
       </motion.div>
-      <motion.div className="project-copy" style={reduce ? undefined : {y: drift}}>
+      <div className="project-copy">
         <Reveal><p className="project-cat"><b>{p.index}</b> {p.category}</p></Reveal>
         <Reveal delay={0.05}><h3>{p.name}</h3></Reveal>
         <Reveal delay={0.1}><p className="project-sub">{p.subtitle}</p></Reveal>
@@ -118,7 +117,7 @@ function ProjectRow({p, i}: {p: Project; i: number}) {
           </div>
           {p.protected && <p className="protected-note"><Lock size={13} /> This app is password-protected to prevent AI/API abuse. Ask and I’ll share a demo login.</p>}
         </Reveal>
-      </motion.div>
+      </div>
     </article>
   );
 }

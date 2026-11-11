@@ -45,17 +45,16 @@ function SystemsGraph() {
         <motion.svg className="graph-svg" viewBox="0 0 600 520" role="group" aria-label="Interactive diagram: your tools, data, AI and security connected around one hub" style={{x: frontX, y: frontY}}>
           <defs>
             <linearGradient id="hubGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#8B5CF6" /><stop offset="1" stopColor="#EC4899" /></linearGradient>
-            <filter id="soft"><feGaussianBlur stdDeviation="10" /></filter>
+            <radialGradient id="hubGlow"><stop offset="0.55" stopColor="#8B5CF6" stopOpacity="0.55" /><stop offset="1" stopColor="#8B5CF6" stopOpacity="0" /></radialGradient>
           </defs>
-          {nodes.map((n, i) => (
-            <line key={n.id} x1={HUB.x} y1={HUB.y} x2={n.x} y2={n.y} className={'link' + (hot === n.id ? ' hot' : '')} style={{animationDelay: `${i * -0.4}s`}} stroke={hot === n.id ? n.color : undefined} />
+          {nodes.map((n) => (
+            <line key={n.id} x1={HUB.x} y1={HUB.y} x2={n.x} y2={n.y} className={'link' + (hot === n.id ? ' hot' : '')} stroke={hot === n.id ? n.color : undefined} />
           ))}
-          <circle cx={HUB.x} cy={HUB.y} r="62" fill="url(#hubGrad)" opacity=".5" filter="url(#soft)" />
+          <circle cx={HUB.x} cy={HUB.y} r="90" fill="url(#hubGlow)" />
           <circle cx={HUB.x} cy={HUB.y} r="50" fill="url(#hubGrad)" />
           <text x={HUB.x} y={HUB.y + 11} textAnchor="middle" className="hub-text">MB</text>
-          {nodes.map((n, i) => (
+          {nodes.map((n) => (
             <g key={n.id} className="node" tabIndex={0} role="button" aria-label={`${n.label}: ${n.hint}`}
-              style={{animationDelay: `${i * 0.35}s`}}
               onPointerEnter={() => setHot(n.id)} onFocus={() => setHot(n.id)} onBlur={() => setHot(null)}
               onClick={() => setHot((h) => (h === n.id ? null : n.id))}>
               <circle cx={n.x} cy={n.y} r={hot === n.id ? 40 : 33} className="node-bg" stroke={n.color} />

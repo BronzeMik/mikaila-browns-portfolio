@@ -1,6 +1,6 @@
 /* ============ Projects ============ */
 .projects{position:relative;background:var(--deep);color:#fff;padding:clamp(80px,11vw,150px) 0;overflow:clip}
-.projects::before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:var(--violet);filter:blur(140px);opacity:.18;top:10%;left:-300px}
+.projects::before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,#8B5CF62e 0,#8B5CF600 70%);top:10%;left:-300px}
 .projects .shell{position:relative}
 .projects .section-head h2{color:var(--off)}
 .project-stack{display:grid;gap:clamp(90px,12vw,180px)}
@@ -12,16 +12,16 @@
 .project.layout-5{grid-template-columns:1.1fr .9fr}.project.layout-5 .project-visual{order:2}
 .project-visual{position:relative;perspective:1200px}
 .project-tilt{position:relative;transform-style:preserve-3d}
-.project-glow{position:absolute;inset:8% 4%;border-radius:40px;background:var(--grad);filter:blur(60px);opacity:.38;transform:translateZ(-60px)}
-.theme-onboarding .project-glow{background:linear-gradient(120deg,var(--cyan),var(--violet))}
-.theme-fixit .project-glow{background:linear-gradient(120deg,var(--magenta),var(--cyan))}
+.project-glow{position:absolute;inset:8% 4%;border-radius:40px;background:radial-gradient(ellipse,#8B5CF688 0,#EC489933 50%,transparent 72%)}
+.theme-onboarding .project-glow{background:radial-gradient(ellipse,#22D3EE66 0,#8B5CF633 50%,transparent 72%)}
+.theme-fixit .project-glow{background:radial-gradient(ellipse,#EC489966 0,#22D3EE33 50%,transparent 72%)}
 .project-window{position:relative;border-radius:22px;background:#1a0b2e;border:1px solid #ffffff22;box-shadow:0 50px 90px -30px #000a;overflow:hidden;transition:box-shadow .5s}
 .project:hover .project-window{box-shadow:0 60px 110px -30px #8b5cf688}
 .window-bar{display:flex;align-items:center;gap:7px;padding:13px 18px;background:#ffffff0a;border-bottom:1px solid #ffffff14}
 .window-bar i{width:10px;height:10px;border-radius:50%;background:#ffffff33}.window-bar i:nth-child(1){background:#ec4899}.window-bar i:nth-child(2){background:#c4b5fd}.window-bar i:nth-child(3){background:#22d3ee}
 .window-bar span{margin-left:auto;font-size:11px;color:#9d8dc0;letter-spacing:.06em}
 .window-body{padding:clamp(16px,3vw,30px);min-height:clamp(250px,32vw,380px);display:grid;align-items:center}
-.project-badge{position:absolute;top:-14px;right:22px;transform:translateZ(50px);padding:7px 14px;border-radius:999px;background:var(--cyan);color:var(--deep);font-size:.75rem;font-weight:800;letter-spacing:.04em;box-shadow:0 10px 30px -8px #22d3ee99}
+.project-badge{position:absolute;top:-14px;right:22px;padding:7px 14px;border-radius:999px;background:var(--cyan);color:var(--deep);font-size:.75rem;font-weight:800;letter-spacing:.04em;box-shadow:0 10px 30px -8px #22d3ee99}
 .concept-note{margin-top:18px;font-size:.75rem;color:#8e7fb0;text-align:center}
 .project-cat{font-size:.74rem;font-weight:700;letter-spacing:.16em;color:var(--lav);margin-bottom:14px}
 .project-cat b{color:var(--magenta);margin-right:8px}
@@ -115,7 +115,7 @@
 
 /* ============ Credentials ============ */
 .creds{position:relative;background:var(--deep);color:#fff;padding:clamp(80px,11vw,150px) 0;overflow:clip}
-.creds::after{content:"";position:absolute;width:600px;height:600px;border-radius:50%;background:var(--magenta);filter:blur(150px);opacity:.14;right:-200px;top:20%}
+.creds::after{content:"";position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,#EC489924 0,#EC489900 70%);right:-200px;top:20%}
 .creds .shell{position:relative;z-index:1}
 .creds .section-head h2{color:var(--off)}
 .creds-top{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;margin-bottom:clamp(50px,7vw,90px)}
@@ -141,7 +141,7 @@
 
 /* ============ Contact ============ */
 .contact{position:relative;background:linear-gradient(160deg,#2a1050,var(--deep) 60%);color:#fff;padding:clamp(90px,12vw,160px) 0 clamp(70px,9vw,120px);overflow:clip}
-.contact-orb{position:absolute;width:620px;height:620px;border-radius:50%;background:var(--violet);filter:blur(140px);opacity:.3;top:-200px;left:30%}
+.contact-orb{position:absolute;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,#8B5CF64d 0,#8B5CF600 70%);top:-200px;left:30%}
 .contact .shell{position:relative}
 .contact .kicker{color:var(--lav)}
 .contact-title{font-size:clamp(3rem,10vw,9rem);margin-bottom:clamp(40px,6vw,80px);color:var(--off)}
