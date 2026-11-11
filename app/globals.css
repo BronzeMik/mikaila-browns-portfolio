@@ -23,10 +23,11 @@ img,svg{max-width:100%}
 
 /* ============ Shared type & buttons ============ */
 .split-line{display:block}
-.split-mask{display:inline-block;overflow:hidden;vertical-align:top;padding:.08em .04em .16em;margin:-.08em -.04em -.16em}
+.split-mask{display:inline-block;overflow:hidden;vertical-align:top;padding:.08em .04em .16em;margin:-.08em .1em -.16em -.04em}
 .split-word{display:inline-block;will-change:transform}
 .accent{font-family:var(--f-serif);font-style:italic;font-weight:400;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
-h1,h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.045em;line-height:.98}
+h1,h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.045em;line-height:.98;word-spacing:.12em}
+h3,h4{word-spacing:.08em}
 .kicker{display:inline-flex;gap:12px;align-items:center;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--violet);margin-bottom:22px}
 .kicker span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid currentColor;letter-spacing:0}
 .section-head{max-width:880px;margin-bottom:clamp(40px,6vw,80px)}
